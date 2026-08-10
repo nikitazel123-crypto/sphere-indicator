@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "id": "sphereindicator",
+  "version": "${version}",
+  "name": "Sphere Indicator",
+  "description": "Визуально различает сферы HolyWorld по тексту лора",
+  "authors": ["you"],
+  "contact": {},
+  "license": "MIT",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "com.holyworld.sphereindicator.SphereIndicatorMod"
+    ]
+  },
+  "mixins": [
+    "sphereindicator.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.14.0",
+    "minecraft": "1.16.5",
+    "java": ">=16",
+    "fabric-api": "*"
+  }
+}
