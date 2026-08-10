@@ -21,11 +21,13 @@ jobs:
           java-version: '16'
           distribution: 'temurin'
 
-      - name: Fix gradlew line endings and build
-        run: |
-          sed -i 's/\r$//' gradlew
-          chmod +x gradlew
-          ./gradlew build --no-daemon
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '7.4.2'
+
+      - name: Build with Gradle
+        run: gradle build --no-daemon
 
       - name: Upload JAR artifact
         uses: actions/upload-artifact@v5
